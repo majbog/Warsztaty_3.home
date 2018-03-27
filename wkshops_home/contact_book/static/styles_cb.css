@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    background: slategrey;
+}
+
+form{
+    margin-left: 50px;
+}
+
+header{
+    background-color: lightgrey;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.logo{
+    float: left;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+nav{
+    float: right;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 25px;
+    position: relative;
+}
+
+nav a{
+    color: #444444;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+nav a:hover{
+    color: #000;
+
+}
+
+nav a::before{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #444;
+    position: absolute;
+    top: 0;
+    transition: all ease-in-out 250ms;
+
+}
+
+nav a:hover::before{
+    width: 100%;
+}
+
+
+.contacts-list{
+    margin-left: 70px;
+}
+
+h2{
+    text-transform: uppercase;
+}
+
+
+a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.manage-contact{
+    border-radius: 50px 15px 30px;
+    border: 0;
+
+}
+
+.contact-container{
+    margin-left: 70px;
+}
+
+.contact-header{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+    background-color: #aaaaaa;
+    border-radius: 50px 15px 30px;
+    width: 300px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.hidden{
+    display: none;
+}

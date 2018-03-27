@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="contacts-list">
+    <h2>All groups available</h2>
+    <ul>
+        {% for group in contacts %}
+        <li>{{group.name}}
+            <button class="manage-contact">
+                <a href="#">
+                    Details
+                </a>
+            </button>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}

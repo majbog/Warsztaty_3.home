@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Book</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles_cb.css' %}">
+
+</head>
+<body>
+{% block header %}
+<header>
+    <div class="container">
+
+        <img src="{% static 'logo.png' %}" alt="logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}"> Home </a> </li>
+                <li><a href="{% url 'all-groups' %}"> Groups </a> </li>
+                <li><a href="#"> Users </a> </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+{% endblock %}
+
+
+<data>
+
+    {% block content %}
+
+    {% endblock %}
+
+</data>
+
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="{% static '/js/app.js' %}"></script>
+</body>
+</html>

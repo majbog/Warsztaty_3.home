@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="contact-container">
+
+    <h2>{{contact.name}}</h2>
+
+    <p>
+        <i>({{contact.description}})</i>
+    </p>
+
+
+
+    <div class="contact-section">
+        <button class="manage-contact">
+                <a href="{% url 'add-phone' contact.id %}">
+                    add phone
+                </a>
+        </button>
+        <button class="manage-contact">
+                <a href="{% url 'add-mail' contact.id %}">
+                    add email address
+                </a>
+        </button>
+        <h3 class="contact-header">Phone:</h3>
+        <ul class="contact-details hidden">
+            {% for phone in contact_phones %}
+            <li>{{phone.number}} || {{phone.get_type_display}}</li>
+            {% empty %}
+            <p>No phone number defined</p>
+            {% endfor %}
+        </ul>
+        <h3 class="contact-header">Mail:</h3>
+        <ul class="contact-details hidden">
+            {% for mail in contact_mails %}
+            <li>{{mail.mail_address}} || {{mail.get_type_display }}</li>
+            {% empty %}
+            <p>No email defined</p>
+            {% endfor %}
+        </ul>
+        <h3 class="contact-header">Address:</h3>
+        <ul class="contact-details hidden">
+            {% if contact_address %}
+            <li>{{contact_address.city}}</li>
+            {% else %}
+            <button class="manage-contact">
+                <a href="#">
+                    add address
+                </a>
+            </button>
+            {% endif %}
+        </ul>
+
+    </div>
+
+</div>
+
+{% endblock %}
